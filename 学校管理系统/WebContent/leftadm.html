@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+  <script src="js/layui/layui.js" charset="utf-8"></script>
+   <link rel="stylesheet" href="js/layui/css/layui.css"  media="all"/>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){	
+	//导航切换
+	$(".menuson .header").click(function(){
+		var $parent = $(this).parent();
+		$(".menuson>li.active").not($parent).removeClass("active open").find('.sub-menus').hide();
+		$parent.addClass("active");
+		if(!!$(this).next('.sub-menus').size()){
+			if($parent.hasClass("open")){
+				$parent.removeClass("open").find('.sub-menus').hide();
+			}else{
+				$parent.addClass("open").find('.sub-menus').show();	
+			}
+		}
+	});
+	
+	// 三级菜单点击
+	$('.sub-menus li').click(function(e) {
+        $(".sub-menus li.active").removeClass("active")
+		$(this).addClass("active");
+    });
+	
+	$('.title').click(function(){
+		var $ul = $(this).next('ul');
+		$('dd').find('.menuson').slideUp();
+		if($ul.is(':visible')){
+			$(this).next('.menuson').slideUp();
+		}else{
+			$(this).next('.menuson').slideDown();
+		}
+	});
+})	
+</script>
+
+
+</head>
+
+<body style="background:#f0f9fd;">
+	<div class="lefttop"><span></span>导航栏</div>
+    <dl class="leftmenu">
+    <dd>
+    <div class="title">
+    <span><img src="images/leftico01.png" /></span>学员管理
+    </div>
+    	<ul class="menuson">
+        <li> <div class="header"> <cite></cite> <a href="xyxxadm.jsp"  target="rightFrame">学员信息</a>  <i></i> </div> </li>
+        <li><div class="header"> <cite></cite> <a href="xzxyadm.jsp" target="rightFrame">新增学员</a> <i></i></div></li>
+        <li><div class="header"> <cite></cite> <a href="xyxfadm.jsp" target="rightFrame">学员学分</a> <i></i></div></li>
+        <li><div class="header"> <cite></cite> <a href="xyzcmmadm.jsp" target="rightFrame">重置学员密码</a> <i></i></div></li>
+        </ul>    
+    </dd>
+        
+     <dd>
+    <div class="title">
+    <span><img src="images/leftico01.png" /></span>教员管理
+    </div>
+    	<ul class="menuson">
+		<li> <div class="header"> <cite></cite> <a href="jyxxadm.jsp" target="rightFrame">教员信息</a>  <i></i> </div> </li>
+        <li><div class="header"> <cite></cite> <a href="xzjyadm.jsp" target="rightFrame">新增教员</a> <i></i></div></li>
+		<li> <div class="header"> <cite></cite> <a href="jyzwadm.jsp" target="rightFrame">教员职位信息</a>  <i></i> </div> </li>
+		<li> <div class="header"> <cite></cite> <a href="jyxxadmzl.jsp" target="rightFrame">教员离职信息</a>  <i></i> </div> </li>
+		<li><div class="header"> <cite></cite> <a href="jyzcmmadm.jsp" target="rightFrame">重置教员密码</a> <i></i></div></li>
+        </ul> 
+    </dd>
+    
+      <dd>
+    <div class="title">
+    <span><img src="images/leftico01.png" /></span>年级管理
+    </div>
+    	<ul class="menuson">
+    	
+		<li> <div class="header"> <cite></cite> <a href="njxxadm.jsp" target="rightFrame">年级信息</a>  <i></i> </div> </li>
+		<li> <div class="header"> <cite></cite> <a href="bjxxadm.jsp" target="rightFrame">班级信息</a>  <i></i> </div> </li>
+         <li><div class="header"> <cite></cite> <a href="sxgladm.jsp" target="rightFrame">升学管理</a> <i></i></div></li>
+                  <li><div class="header"> <cite></cite> <a href="bysxxadm.jsp" target="rightFrame">毕业生信息</a> <i></i></div></li>
+        </ul> 
+    </dd>
+    <dd>
+    <div class="title">
+    <span><img src="images/leftico02.png" /></span>课程管理
+    </div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="kcxxadm.jsp" target="rightFrame">课程信息</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="xzkcadm.jsp" target="rightFrame">新增课程</a><i></i></div></li>
+        </ul>     
+    </dd> 
+    <dd>
+    <div class="title">
+    <span><img src="images/leftico02.png" /></span>成绩管理
+    </div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="cqcxstu.jsp" target="rightFrame">查询成绩</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="lrcqadm.jsp" target="rightFrame">录入成绩</a><i></i></div></li>
+    </ul>     
+    </dd> 
+    <dd>
+    <div class="title">
+    <span><img src="images/leftico02.png" /></span>出勤管理
+    </div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="xycqadm.jsp" target="rightFrame">学员出勤情况</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="flow.html" target="rightFrame">教员出勤情况</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="project.html" target="rightFrame">出勤类型</a><i></i></div></li>
+
+        </ul>     
+    </dd> 
+    <dd>
+    <div class="title">
+    <span><img src="images/leftico02.png" /></span>选课方向管理
+    </div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="xkxxadm.jsp" target="rightFrame">选课信息</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="xksz.jsp" target="rightFrame">设置选课信息</a><i></i></div></li>
+
+        </ul>     
+    </dd>
+    <dd><div class="title"><span><img src="images/leftico03.png" /></span>报表管理</div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="bjrcq.jsp" target="rightFrame">班级日出勤</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="xyqj.jsp" target="rightFrame">学员请假查询</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="jysj.jsp" target="rightFrame">就业数据统计报表</a><i></i></div></li>
+    </ul>    
+    </dd>  
+    <dd><div class="title"><span><img src="images/leftico04.png" /></span>满意度调查管理</div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="wjtj.jsp" target="rightFrame">问卷统计</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="txwj.jsp" target="rightFrame">满意度详情</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="#">设置问卷</a><i></i></div></li>
+    </ul>
+    </dd>  
+     <dd><div class="title"><span><img src="images/leftico04.png" /></span>管理员管理</div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="glyxxadm.jsp" target="rightFrame">管理员信息</a><i></i></div></li>
+        <li><div class="header"><cite></cite><a href="xzglyadm.jsp" target="rightFrame">新增管理员</a><i></i></div></li>
+    </ul>
+    </dd>
+    <dd><div class="title"><span><img src="images/leftico04.png" /></span>数据备份管理</div>
+    <ul class="menuson">
+        <li><div class="header"><cite></cite><a href="bf.jsp" target="rightFrame">备份还原</a><i></i></div></li>
+    </ul>
+    </dd>
+    </dl>
+</body>
+</html>

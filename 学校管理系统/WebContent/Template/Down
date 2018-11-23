@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<style type="text/css">
+body {margin: 0 0 0 5px;}
+html,body{height:100%;background-color: rgb(240, 249, 253);}
+#main{height:90%;overflow: auto;}
+.bottom{right:5px;margin-top:5px;}
+span{color:#2A7CB1;cursor:pointer;float:right;font-family: 宋体;font-size: 9pt;}
+.div1{border:1px soid red;height: 82%;overflow: auto;}
+table {font-family: 宋体;font-size: 12px;color: rgb(0, 0, 0);}
+a{text-decoration: none;}
+</style>
+</head>
+<body>
+<div id="main">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<!--%context%-->
+	</table>
+		</div>
+<div class="bottom"><span id="cx">
+	查看更多公共下载请点击>></span></div>
+	<script>
+	function popOpen(name,id){
+	window.location.href="Down2?name="+name+"&id="+id;
+	}
+$("#cx").click(function(){
+	window.open("ggxz.html");
+})
+</script>
+</body>
+</html>
